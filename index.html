@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/flipbook.style.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="js/flipbook.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".book-1").flipBook({
+                pages: [{
+                    src: "images/book2/1.png",
+                    thumb: "images/book2/1.png",
+                    title: "Cover"
+                }, ],
+                btnShare: {
+                    enabled: false
+                },
+                btnPrint: {
+                    hideOnMobile: true
+                },
+                btnDownloadPages: {
+                    enabled: true,
+                    title: "Download pages",
+                    icon: "fa-download",
+                    icon2: "file_download",
+                    url: "images/Annual Report.rar",
+                    name: "allPages.zip",
+                    hideOnMobile: false
+                },
+                pdfUrl: 'pdf/Annual Report.pdf',
+                btnColor: 'rgb(255,120,60)',
+                sideBtnRadius: 60,
+                sideBtnSize: 60,
+                sideBtnBackground: "rgba(0,0,0,.7)",
+                sideBtnColor: 'rgb(255,120,60)',
+                lightBox: true,
+                viewMode: "3d",
+                layout: 3,
+                btnSound: {
+                    vAlign: "top",
+                    hAlign: "left"
+                },
+                btnAutoplay: {
+                    vAlign: "top",
+                    hAlign: "left"
+                },
+                currentPage: {
+                    vAlign: "bottom",
+                    hAlign: "left"
+                }
+            });
+        })
+    </script>
+    <style type="text/css">
+        body {
+            background-color: #f6f6f6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .bookshelf .thumb {
+            display: inline-block;
+            cursor: pointer;
+            justify-content: center;
+            align-items: center;
+            width: 15% !important;
+            box-shadow: 0px 1px 3px rgba(0, 0, 0, .3);
+            max-width: 100px;
+        }
+        
+        .bookshelf .thumb img {
+            width: 100%;
+            display: block;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .bookshelf .shelf-img {
+            z-index: 0;
+            height: auto;
+            max-width: 100%;
+            vertical-align: top;
+            margin-top: -12px;
+        }
+        
+        .bookshelf .covers {
+            width: 100%;
+            height: auto;
+            z-index: 99;
+            position: relative;
+            text-align: center;
+            margin-right: 20px;
+            padding: 0;
+        }
+        
+        .bookshelf {
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .glass-navbar {
+            background: radial-gradient(circle at 20% 30%, rgba(255, 69, 0, 0.4), transparent 50%), radial-gradient(circle at 80% 70%, rgba(0, 191, 255, 0.4), transparent 50%);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(3.2px);
+            -webkit-backdrop-filter: blur(3.2px);
+            border: 1px solid rgba(177, 236, 241, 0.3);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand {
+            color: black;
+            font-weight: bolder;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            height: 80px;
+            margin-right: 10px;
+        }
+        
+        .glass-footer {
+            background: linear-gradient(135deg, rgba(255, 165, 0, 0.7), rgba(74, 144, 226, 0.7));
+            background-blend-mode: overlay;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: auto;
+        }
+        
+        .glass-footer::before {
+            content: "";
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 60% 70%, rgba(255, 69, 0, 0.4), transparent 50%), radial-gradient(circle at 40% 30%, rgba(0, 191, 255, 0.4), transparent 50%);
+            mix-blend-mode: screen;
+            z-index: 0;
+        }
+        
+        .glass-footer .social,
+        .glass-footer .h6 {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .glass-footer .social {
+            margin-bottom: 10px;
+        }
+        
+        .glass-footer .social a {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.5rem;
+            margin: 0 10px;
+        }
+        
+        .glass-footer .h6 {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #000;
+        }
+        /* Responsive Styles */
+        
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 50px;
+            }
+            .bookshelf .thumb {
+                width: 30% !important;
+                max-width: 80px;
+            }
+            .bookshelf .thumb img {
+                width: 100%;
+            }
+            .bookshelf .covers {
+                margin-right: 0;
+            }
+            .glass-footer {
+                padding: 10px;
+            }
+            .glass-footer .social a {
+                font-size: 1.2rem;
+                margin: 0 5px;
+            }
+            .glass-footer .h6 {
+                font-size: 0.9rem;
+            }
+            .book-1 img {
+                width: 80vw !important;
+                height: auto !important;
+                margin-left: 10vw !important;
+                margin-right: 10vw !important;
+                max-height: 60vh !important;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .book-1 img {
+                width: auto !important;
+                height: 60vh !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+        }
+    </style>
+    <link rel="shortcut icon" href="images/E-CELL-04 (1).svg">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav class="glass-navbar">
+        <a class="navbar-brand" href="#">
+            <img src="images/E-CELL-04 (1).png" alt="">
+            <span>Annual Report 2024-25</span>
+        </a>
+    </nav>
+    <div class="content">
+        <div class="bookshelf">
+            <div class="covers">
+                <div class="book-1"><img src="images/book2/1.png"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <section id="glass-footer" class="footer glass-footer">
+        <div class="container">
+            <ul class="list-unstyled list-inline social">
+                <li class="list-inline-item"><a href="https://www.instagram.com/ecell_sit/"><i class="fab fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="https://x.com/ecell_sit"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="black">
+                    <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"/></svg></a></li>
+                <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=61551074501094"><i class="fab fa-facebook-square"></i></a></li>
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/e-cell-sit-936b11291"><i class="fab fa-linkedin"></i></a></li>
+            </ul>
+            <p class="h6 text-black mt-3">Copyright © E-Cell SIT. All Rights Reserved.</p>
+        </div>
+    </section>
+    <!-- End Of Footer -->
+
+    <!-- Bootstrap Js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
